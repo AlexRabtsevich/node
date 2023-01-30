@@ -1,0 +1,111 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "standard",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "prettier",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "quotes": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": ["error"]
+      }
+    ],
+    "no-useless-constructor": "off",
+    "no-undef": "off",
+    "no-duplicate-imports": "error",
+    "no-magic-numbers": "off",
+    "no-param-reassign": "warn",
+    "no-else-return": "warn",
+    "no-multi-assign": "warn",
+    "no-implicit-coercion": [2, { "allow": ["!!", "~"] } ],
+    "no-case-declarations": "warn",
+    "no-nested-ternary": "error",
+    "prefer-destructuring": "warn",
+    "prefer-template": "warn",
+    "prefer-rest-params": "warn",
+    "promise/always-return": "off",
+    "prettier/prettier": "error",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["external", "internal", ["sibling", "parent", "index"]],
+        "newlines-between": "always"
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-useless-constructor": "warn",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-inferrable-types": "error",
+    "@typescript-eslint/quotes": [
+      2,
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      },
+      {
+        "selector": ["enum", "enumMember"],
+        "format": ["PascalCase"]
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [2, { "argsIgnorePattern": "^_" }],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always", "prev": "*", "next": "block-like"
+      },
+      {
+        "blankLine": "always", "prev": "block-like", "next": "*"
+      },
+      {
+        "blankLine": "always", "prev": "*", "next": "return"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "."
+      }
+    }
+  }
+}

@@ -6,13 +6,25 @@
   "scripts": {
     "dev": "nodemon",
     "build": "rimraf ./dist && npx tsc",
-    "start": "npm run build && node dist/main.js"
+    "start": "npm run build && node dist/main.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js)\"",
+    "prepare": "husky install"
   },
   "type": "module",
   "author": "Alex Rabtsevich",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "18.11.18",
+    "@typescript-eslint/eslint-plugin": "5.49.0",
+    "@typescript-eslint/parser": "5.49.0",
+    "eslint": "8.33.0",
+    "eslint-config-prettier": "8.6.0",
+    "eslint-config-standard": "17.0.0",
+    "eslint-import-resolver-typescript": "3.5.3",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-prettier": "4.2.1",
+    "husky": "^8.0.3",
     "nodemon": "2.0.20",
     "rimraf": "4.1.2",
     "ts-node": "10.9.1",
